@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TikTok Auth Callback</title>
+  <script>
+    // Pass the auth code back to the local app
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const state = params.get('state');
+    if (code) {
+      window.location.href = 'http://localhost:5002/callback?' + window.location.search.slice(1);
+    }
+  </script>
+</head>
+<body>
+  <p>Redirecting to TikTok Auto...</p>
+</body>
+</html>
